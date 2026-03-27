@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-navy-deep: #0a162e;
+  --color-gold-elegant: #e5c158;
+  --color-gold-light: #f3e5ab;
+}
+
+@layer utilities {
+  .glass-dark {
+    background: rgba(10, 22, 46, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(229, 193, 88, 0.2);
+  }
+  
+  .text-gold-gradient {
+    background: linear-gradient(to right, #e5c158, #f3e5ab, #e5c158);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
