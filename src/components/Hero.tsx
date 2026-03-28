@@ -34,7 +34,7 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(({ photo1Ref, photo2Ref }, re
       </div>
 
       <div className="hero-scroll-indicator">
-        <span>Descubre los detalles</span>
+        <span>Desliza para ver los detalles</span>
         <div className="scroll-line" />
       </div>
     </div>

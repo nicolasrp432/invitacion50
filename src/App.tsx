@@ -185,7 +185,7 @@ export default function App() {
         scrub: true,
         onUpdate: (self) => {
           const p = self.progress;
-          const FADE_END = 0.12;
+          const FADE_END = 0.10;
           const opacity = Math.max(0, 1 - p / FADE_END);
           heroOverlay.style.opacity = String(opacity);
           heroOverlay.style.pointerEvents = opacity > 0 ? '' : 'none';
@@ -193,7 +193,7 @@ export default function App() {
           const photo1 = heroPhoto1Ref.current;
           const photo2 = heroPhoto2Ref.current;
           if (photo1 && photo2) {
-            const photoProgress = Math.min(1, Math.max(0, (p - 0.03) / 0.08));
+            const photoProgress = Math.min(1, Math.max(0, (p - 0.02) / 0.08));
             photo1.style.opacity = String(1 - photoProgress);
             photo2.style.opacity = String(photoProgress);
           }
@@ -212,8 +212,8 @@ export default function App() {
         onUpdate: (self) => {
           const p = self.progress;
           let opacity = 0;
-          if (p >= 0.11 && p <= 0.15) opacity = (p - 0.11) / 0.04;
-          else if (p > 0.15 && p < 0.95) opacity = 0.92;
+          if (p >= 0.08 && p <= 0.12) opacity = (p - 0.08) / 0.04;
+          else if (p > 0.12 && p < 0.95) opacity = 0.92;
           else if (p >= 0.95 && p <= 0.99) opacity = 0.92 * (1 - (p - 0.95) / 0.04);
           darkOverlay.style.opacity = String(opacity);
         },
@@ -319,7 +319,7 @@ export default function App() {
 
       <div id="scroll-container" ref={scrollContainerRef}>
         {/* Section 1: Celebración */}
-        <section className="scroll-section" data-enter="18" data-leave="35">
+        <section className="scroll-section" data-enter="12" data-leave="28">
           <div className="section-inner">
             <span className="section-label">001 / Celebración</span>
             <h2 className="section-heading">Medio Siglo de Momentos Inolvidables</h2>
@@ -332,7 +332,7 @@ export default function App() {
         </section>
 
         {/* Section 2: Detalles del Evento */}
-        <section className="scroll-section" data-enter="35" data-leave="55">
+        <section className="scroll-section" data-enter="28" data-leave="48">
           <div className="section-inner">
             <span className="section-label">002 / Detalles</span>
             <h2 className="section-heading">Cuándo y Dónde</h2>
@@ -359,7 +359,7 @@ export default function App() {
         </section>
 
         {/* Section 3: Mensaje Personal */}
-        <section className="scroll-section" data-enter="55" data-leave="72">
+        <section className="scroll-section" data-enter="48" data-leave="68">
           <div className="section-inner">
             <span className="section-label">003 / Un Mensaje</span>
             <h2 className="section-heading">Tu Presencia es el Mejor Regalo</h2>
@@ -373,7 +373,7 @@ export default function App() {
         </section>
 
         {/* Section 4: RSVP */}
-        <section className="scroll-section" data-enter="72" data-leave="95" data-persist="true">
+        <section className="scroll-section" data-enter="68" data-leave="95" data-persist="true">
           <RSVP
             finalPhotoSrc="/principal-final.png"
             typeformUrl={RSVP_TYPEFORM_URL}

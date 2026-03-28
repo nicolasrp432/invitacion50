@@ -340,7 +340,7 @@ body {
 #scroll-container {
   position: relative;
   z-index: 10;
-  height: 700vh;
+  height: 500vh;
 }
 
 /* ═══════════════════════════════════════════════
@@ -685,7 +685,7 @@ body {
 
 @media (max-width: 768px) {
   #scroll-container {
-    height: 550vh;
+    height: 450vh;
   }
 
   .hero-photo-container {
