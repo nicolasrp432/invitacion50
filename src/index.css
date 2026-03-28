@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 @import "tailwindcss";
 
-@theme {
+:root {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Cormorant Garamond", serif;
   --font-serif: "Playfair Display", serif;
@@ -642,8 +642,8 @@ body {
   }
 
   .hero-photo-container {
-    width: 220px;
-    height: 280px;
+    width: 280px;
+    height: 380px;
   }
 
   .hero-name {
@@ -693,8 +693,8 @@ body {
 
 @media (max-width: 480px) {
   .hero-photo-container {
-    width: 180px;
-    height: 240px;
+    width: 250px;
+    height: 340px;
   }
 
   .hero-name {
