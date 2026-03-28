@@ -189,6 +189,9 @@ export default function App() {
           const opacity = Math.max(0, 1 - p / FADE_END);
           heroOverlay.style.opacity = String(opacity);
           heroOverlay.style.pointerEvents = opacity > 0 ? '' : 'none';
+          
+          // Anima el texto y posición de la sección principal hacia arriba
+          heroOverlay.style.transform = `translateY(${-(p / FADE_END) * 15}vh)`;
 
           const photo1 = heroPhoto1Ref.current;
           const photo2 = heroPhoto2Ref.current;
