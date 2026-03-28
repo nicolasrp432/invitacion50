@@ -18,7 +18,7 @@ gsap.registerPlugin(ScrollTrigger);
 const FRAME_COUNT = 222;
 const FRAME_SPEED = 1.4;
 const IMAGE_SCALE = 0.88;
-const RSVP_TYPEFORM_URL = "https://form.typeform.com/to/placeholder";
+const RSVP_TYPEFORM_URL = "https://form.typeform.com/to/EPDGaEO3";
 const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=The+Gilded+Garden+Hall";
 
 export default function App() {
@@ -262,7 +262,7 @@ export default function App() {
       setMusicPlaying(false);
     } else {
       audio.volume = 0.35;
-      audio.play().then(() => setMusicPlaying(true)).catch(() => {});
+      audio.play().then(() => setMusicPlaying(true)).catch(() => { });
     }
   }, [musicPlaying, userInteracted]);
 
@@ -274,7 +274,7 @@ export default function App() {
         const audio = audioRef.current;
         if (audio && !musicPlaying) {
           audio.volume = 0.35;
-          audio.play().then(() => setMusicPlaying(true)).catch(() => {});
+          audio.play().then(() => setMusicPlaying(true)).catch(() => { });
         }
       }
     };
@@ -289,17 +289,17 @@ export default function App() {
   return (
     <>
       <Loader loading={loading} loadProgress={loadProgress} />
-      
+
       <audio ref={audioRef} loop preload="auto">
         <source src="/music.mp3" type="audio/mpeg" />
       </audio>
 
       <CanvasBackground ref={canvasRef} />
 
-      <Hero 
-        ref={heroOverlayRef} 
-        photo1Ref={heroPhoto1Ref} 
-        photo2Ref={heroPhoto2Ref} 
+      <Hero
+        ref={heroOverlayRef}
+        photo1Ref={heroPhoto1Ref}
+        photo2Ref={heroPhoto2Ref}
       />
 
       <div id="dark-overlay" ref={darkOverlayRef} />
@@ -311,8 +311,8 @@ export default function App() {
             <span className="section-label">001 / Celebración</span>
             <h2 className="section-heading">Medio Siglo de Momentos Inolvidables</h2>
             <p className="section-body">
-              Te invitamos a ser parte de una celebración única. 
-              Cinco décadas de vida, sueños y logros merecen 
+              Te invitamos a ser parte de una celebración única.
+              Cinco décadas de vida, sueños y logros merecen
               ser celebrados con quienes más importan.
             </p>
           </div>
@@ -324,22 +324,22 @@ export default function App() {
             <span className="section-label">002 / Detalles</span>
             <h2 className="section-heading">Cuándo y Dónde</h2>
 
-            <DetailCard 
-              icon={<CalendarIcon />} 
-              label="Fecha" 
-              value="Sábado, 7 de Junio, 2025" 
-            />
-            
-            <DetailCard 
-              icon={<ClockIcon />} 
-              label="Hora" 
-              value="1:00 PM — 4:00 PM" 
+            <DetailCard
+              icon={<CalendarIcon />}
+              label="Fecha"
+              value="Sábado, 7 de Junio, 2025"
             />
 
-            <DetailCard 
-              icon={<MapPinIcon />} 
-              label="Lugar" 
-              value="The Gilded Garden Hall" 
+            <DetailCard
+              icon={<ClockIcon />}
+              label="Hora"
+              value="1:00 PM — 4:00 PM"
+            />
+
+            <DetailCard
+              icon={<MapPinIcon />}
+              label="Lugar"
+              value="The Gilded Garden Hall"
               link={MAPS_URL}
             />
           </div>
@@ -351,9 +351,9 @@ export default function App() {
             <span className="section-label">003 / Un Mensaje</span>
             <h2 className="section-heading">Tu Presencia es el Mejor Regalo</h2>
             <p className="section-body">
-              No hay regalo más valioso que tu compañía. 
-              Ven a compartir una tarde llena de alegría, 
-              buena música, y momentos que perdurarán 
+              No hay regalo más valioso que tu compañía.
+              Ven a compartir una tarde llena de alegría,
+              buena música, y momentos que perdurarán
               en nuestra memoria para siempre.
             </p>
           </div>
@@ -361,9 +361,9 @@ export default function App() {
 
         {/* Section 4: RSVP */}
         <section className="scroll-section" data-enter="72" data-leave="95" data-persist="true">
-          <RSVP 
-            finalPhotoSrc="/principal-final.png" 
-            typeformUrl={RSVP_TYPEFORM_URL} 
+          <RSVP
+            finalPhotoSrc="/principal-final.png"
+            typeformUrl={RSVP_TYPEFORM_URL}
           />
         </section>
       </div>
