@@ -49,7 +49,7 @@ export default function App() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
     const img = framesRef.current[index];
-    if (!img) return;
+    if (!img || img.naturalWidth === 0) return;
 
     const cw = canvas.width;
     const ch = canvas.height;
@@ -80,7 +80,8 @@ export default function App() {
   const resizeCanvas = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const dpr = window.devicePixelRatio || 1;
+    // Clamp DPR to 2.0 to prevent memory crashes on high-res mobile screens
+    const dpr = Math.min(window.devicePixelRatio || 1, 2.0);
     canvas.width = window.innerWidth * dpr;
     canvas.height = window.innerHeight * dpr;
     canvas.style.width = window.innerWidth + 'px';
@@ -99,13 +100,26 @@ export default function App() {
       loaded++;
       setLoadProgress(Math.round((loaded / FRAME_COUNT) * 100));
       if (loaded === FRAME_COUNT) {
-        framesRef.current = frames;
-        sampleBgColor(frames[0]);
-        resizeCanvas();
-        drawFrame(0);
-        setTimeout(() => setLoading(false), 400);
+        try {
+          framesRef.current = frames;
+          sampleBgColor(frames[0]);
+          resizeCanvas();
+          drawFrame(0);
+          setTimeout(() => setLoading(false), 400);
+        } catch (e) {
+          console.error("Initialization error:", e);
+          setLoading(false);
+        }
       }
     };
+
+    // Safety timeout: Unlock the site after 12s even if progress is stuck
+    const safetyTimer = setTimeout(() => {
+      if (loading) {
+        console.warn("Loading timeout reach. Starting anyway...");
+        setLoading(false);
+      }
+    }, 12000);
 
     for (let i = 0; i < FRAME_COUNT; i++) {
       const img = new Image();
@@ -116,8 +130,11 @@ export default function App() {
     }
 
     window.addEventListener('resize', resizeCanvas);
-    return () => window.removeEventListener('resize', resizeCanvas);
-  }, [drawFrame, resizeCanvas, sampleBgColor]);
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      clearTimeout(safetyTimer);
+    };
+  }, [drawFrame, resizeCanvas, sampleBgColor, loading]);
 
   /* ─── GSAP & Lenis Setup ─── */
   useEffect(() => {
