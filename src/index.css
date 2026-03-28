@@ -51,6 +51,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
@@ -69,6 +70,10 @@ body {
   color: #e5c158;
   margin-bottom: 3rem;
   opacity: 0.8;
+  text-align: center;
+  padding: 0 1.5rem;
+  width: 100%;
+  max-width: 500px;
 }
 
 .loader-bar-track {

@@ -9,8 +9,8 @@ interface LoaderProps {
 const Loader: React.FC<LoaderProps> = ({ loading, loadProgress, onStart }) => {
   return (
     <div id="loader" className={loading ? '' : 'loaded'}>
-      <div className="loader-brand">Alexander Rodriguez</div>
-      
+      <div className="loader-brand">Invitación Alexander Rodriguez</div>
+
       {loadProgress < 100 ? (
         <>
           <div className="loader-bar-track">
@@ -19,8 +19,8 @@ const Loader: React.FC<LoaderProps> = ({ loading, loadProgress, onStart }) => {
           <div className="loader-percent">{loadProgress}%</div>
         </>
       ) : (
-        <button 
-          className="loader-start-btn" 
+        <button
+          className="loader-start-btn"
           onClick={onStart}
           aria-label="Comenzar invitación"
         >
