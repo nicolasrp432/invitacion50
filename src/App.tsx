@@ -105,10 +105,11 @@ export default function App() {
           sampleBgColor(frames[0]);
           resizeCanvas();
           drawFrame(0);
-          setTimeout(() => setLoading(false), 400);
+          // Removed auto-setLoading(false) to wait for manual start
         } catch (e) {
           console.error("Initialization error:", e);
-          setLoading(false);
+          // If total error, allow start anyway
+          setLoadProgress(100);
         }
       }
     };
@@ -269,6 +270,17 @@ export default function App() {
     };
   }, [loading, drawFrame, sampleBgColor]);
 
+  /* ─── Experience Start Logic ─── */
+  const handleExperienceStart = useCallback(() => {
+    setUserInteracted(true);
+    setLoading(false);
+    const audio = audioRef.current;
+    if (audio) {
+      audio.volume = 0.35;
+      audio.play().then(() => setMusicPlaying(true)).catch(() => { });
+    }
+  }, []);
+
   /* ─── Music Logic ─── */
   const toggleMusic = useCallback(() => {
     if (!userInteracted) setUserInteracted(true);
@@ -283,29 +295,13 @@ export default function App() {
     }
   }, [musicPlaying, userInteracted]);
 
-  useEffect(() => {
-    if (loading) return;
-    const handleFirstInt = () => {
-      if (!userInteracted) {
-        setUserInteracted(true);
-        const audio = audioRef.current;
-        if (audio && !musicPlaying) {
-          audio.volume = 0.35;
-          audio.play().then(() => setMusicPlaying(true)).catch(() => { });
-        }
-      }
-    };
-    window.addEventListener('click', handleFirstInt, { once: true });
-    window.addEventListener('touchstart', handleFirstInt, { once: true });
-    return () => {
-      window.removeEventListener('click', handleFirstInt);
-      window.removeEventListener('touchstart', handleFirstInt);
-    };
-  }, [loading, userInteracted, musicPlaying]);
-
   return (
     <>
-      <Loader loading={loading} loadProgress={loadProgress} />
+      <Loader 
+        loading={loading} 
+        loadProgress={loadProgress} 
+        onStart={handleExperienceStart}
+      />
 
       <audio ref={audioRef} loop preload="auto">
         <source src="/music.mp3" type="audio/mpeg" />

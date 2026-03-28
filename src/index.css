@@ -96,6 +96,35 @@ body {
   margin-top: 1.5rem;
 }
 
+.loader-start-btn {
+  padding: 1rem 3.5rem;
+  background: transparent;
+  border: 1px solid rgba(229, 193, 88, 0.5);
+  color: #e5c158;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.loader-start-btn:hover {
+  background: rgba(229, 193, 88, 0.1);
+  border-color: #e5c158;
+  letter-spacing: 0.4em;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* ═══════════════════════════════════════════════
    CANVAS — SCROLL-DRIVEN VIDEO BACKGROUND
    ═══════════════════════════════════════════════ */
