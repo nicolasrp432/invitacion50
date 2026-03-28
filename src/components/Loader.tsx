@@ -9,7 +9,10 @@ interface LoaderProps {
 const Loader: React.FC<LoaderProps> = ({ loading, loadProgress, onStart }) => {
   return (
     <div id="loader" className={loading ? '' : 'loaded'}>
-      <div className="loader-brand">Invitación Alexander Rodriguez</div>
+      <div className="loader-brand">
+        <span className="loader-accent">Invitación</span>
+        Alexander Rodriguez
+      </div>
 
       {loadProgress < 100 ? (
         <>
