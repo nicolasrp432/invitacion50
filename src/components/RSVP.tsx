@@ -20,13 +20,13 @@ const RSVP: React.FC<RSVPProps> = ({ finalPhotoSrc, typeformUrl }) => {
       </div>
 
       <div className="rsvp-card">
-        <h3 className="rsvp-title">Regalo: Lluvia de Sobres</h3>
+        <h3 className="rsvp-title">Lluvia de Sobres ✉️ </h3>
         <div className="rsvp-divider" />
         <p className="rsvp-text" style={{ fontSize: '1.1rem', fontWeight: 500, color: '#e5c158' }}>
           Tu presencia es mi mayor regalo.
         </p>
         <p className="rsvp-text">
-          Si deseas tener un detalle conmigo, se realizará lluvia de sobres el día del evento.
+          Se realizará lluvia de sobres el día del evento.
           ¡Gracias por ser parte de este día!
         </p>
 

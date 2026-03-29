@@ -19,7 +19,7 @@ const FRAME_COUNT = 222;
 const FRAME_SPEED = 1.4;
 const IMAGE_SCALE = 0.88;
 const RSVP_TYPEFORM_URL = "https://form.typeform.com/to/EPDGaEO3";
-const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=The+Gilded+Garden+Hall";
+const MAPS_URL = "https://maps.app.goo.gl/Fgpjpi3U7AS6vccV7?g_st=aw";
 
 export default function App() {
   // Refs
@@ -189,7 +189,7 @@ export default function App() {
           const opacity = Math.max(0, 1 - p / FADE_END);
           heroOverlay.style.opacity = String(opacity);
           heroOverlay.style.pointerEvents = opacity > 0 ? '' : 'none';
-          
+
           // Anima el texto y posición de la sección principal hacia arriba
           heroOverlay.style.transform = `translateY(${-(p / FADE_END) * 15}vh)`;
 
@@ -300,9 +300,9 @@ export default function App() {
 
   return (
     <>
-      <Loader 
-        loading={loading} 
-        loadProgress={loadProgress} 
+      <Loader
+        loading={loading}
+        loadProgress={loadProgress}
         onStart={handleExperienceStart}
       />
 
@@ -325,7 +325,7 @@ export default function App() {
         <section className="scroll-section" data-enter="12" data-leave="28">
           <div className="section-inner">
             <span className="section-label">001 / Celebración</span>
-            <h2 className="section-heading">Medio Siglo de Momentos Inolvidables</h2>
+            <h2 className="section-heading">50 años de Momentos Inolvidables </h2>
             <p className="section-body">
               Te invitamos a ser parte de una celebración única.
               Cinco décadas de vida, sueños y logros merecen
@@ -343,13 +343,13 @@ export default function App() {
             <DetailCard
               icon={<CalendarIcon />}
               label="Fecha"
-              value="Sábado, 7 de Junio, 2025"
+              value="Viernes, 1 de Mayo, 2026"
             />
 
             <DetailCard
               icon={<ClockIcon />}
               label="Hora"
-              value="1:00 PM — 4:00 PM"
+              value="5:00 PM"
             />
 
             <DetailCard
