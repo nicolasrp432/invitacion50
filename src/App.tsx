@@ -355,7 +355,7 @@ export default function App() {
             <DetailCard
               icon={<MapPinIcon />}
               label="Lugar"
-              value="The Gilded Garden Hall"
+              value="Casa Campestre"
               link={MAPS_URL}
             />
           </div>
