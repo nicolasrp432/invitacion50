@@ -26,7 +26,6 @@ const RSVP: React.FC<RSVPProps> = ({ finalPhotoSrc, typeformUrl }) => {
           Tu presencia es mi mayor regalo.
         </p>
         <p className="rsvp-text">
-          Se realizará lluvia de sobres el día del evento.
           ¡Gracias por ser parte de este día!
         </p>
 
