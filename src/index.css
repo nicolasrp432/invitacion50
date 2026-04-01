@@ -269,9 +269,9 @@ body {
 .hero-fifty {
   font-family: "Cormorant Garamond", serif;
   font-weight: 300;
-  font-size: 8rem;
+  font-size: 13rem;
   line-height: 1;
-  background: linear-gradient(180deg, rgba(229, 193, 88, 0.3), rgba(229, 193, 88, 0.05));
+  background: linear-gradient(180deg, rgba(229, 193, 88, 0.95), rgba(229, 193, 88, 0.5));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -310,10 +310,10 @@ body {
 
 .hero-scroll-indicator span {
   font-family: "Inter", sans-serif;
-  font-size: 0.55rem;
+  font-size: 0.8rem;
   letter-spacing: 0.4em;
   text-transform: uppercase;
-  color: rgba(229, 193, 88, 0.4);
+  color: rgba(229, 193, 88, 0.9);
 }
 
 .scroll-line {
