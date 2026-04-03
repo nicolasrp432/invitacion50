@@ -349,7 +349,7 @@ export default function App() {
             <DetailCard
               icon={<ClockIcon />}
               label="Hora"
-              value="5:00 PM"
+              value="4:00 PM"
             />
 
             <DetailCard

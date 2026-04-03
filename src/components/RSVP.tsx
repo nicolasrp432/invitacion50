@@ -22,7 +22,7 @@ const RSVP: React.FC<RSVPProps> = ({ finalPhotoSrc, typeformUrl }) => {
       <div className="rsvp-card">
         <h3 className="rsvp-title">Lluvia de Sobres ✉️ </h3>
         <div className="rsvp-divider" />
-        <p className="rsvp-text" style={{ fontSize: '1.1rem', fontWeight: 500, color: '#e5c158' }}>
+        <p className="rsvp-text" style={{ fontSize: '1.3rem', fontWeight: 500, color: '#e5c158' }}>
           Tu presencia es mi mayor regalo.
         </p>
         <p className="rsvp-text">

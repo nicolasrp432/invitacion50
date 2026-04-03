@@ -15,7 +15,7 @@ const DetailCard: React.FC<DetailCardProps> = ({ icon, label, value, link }) => 
         <div className="detail-label">{label}</div>
         <div className="detail-value">{value}</div>
         {link && (
-          <div className="detail-link" style={{ fontSize: '0.7rem', marginTop: '4px', color: '#e5c158', textDecoration: 'underline' }}>
+          <div className="detail-link" style={{ fontSize: '0.9rem', marginTop: '4px', color: '#e5c158', textDecoration: 'underline' }}>
             Ver ubicación en Google Maps
           </div>
         )}

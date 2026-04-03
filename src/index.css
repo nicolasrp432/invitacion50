@@ -296,12 +296,15 @@ body {
 
 .hero-scroll-indicator {
   position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 4rem;
+  right: 5%;
+  left: auto;
+  transform: none;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  width: 120px;
   gap: 0.75rem;
   opacity: 0;
   animation: heroFadeUp 0.8s ease forwards;
@@ -310,10 +313,11 @@ body {
 
 .hero-scroll-indicator span {
   font-family: "Inter", sans-serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.4em;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(229, 193, 88, 0.4);
+  color: rgba(229, 193, 88, 0.8);
+  line-height: 1.4;
 }
 
 .scroll-line {
@@ -475,18 +479,18 @@ body {
 
 .detail-label {
   font-family: "Inter", sans-serif;
-  font-size: 0.55rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(229, 193, 88, 0.5);
+  color: rgba(229, 193, 88, 0.7);
   margin-bottom: 0.25rem;
 }
 
 .detail-value {
   font-family: "Cormorant Garamond", serif;
   font-weight: 500;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   color: white;
 }
 
@@ -755,7 +759,7 @@ body {
   }
 
   .hero-fifty {
-    font-size: 5.5rem;
+    font-size: 7rem;
   }
 
   .section-label {
@@ -784,7 +788,7 @@ body {
   }
 
   .detail-value {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
   }
 
   .music-toggle {
@@ -812,7 +816,7 @@ body {
   }
 
   .hero-fifty {
-    font-size: 4.8rem;
+    font-size: 6.5rem;
   }
 
   .hero-kicker {

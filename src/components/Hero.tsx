@@ -30,7 +30,6 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(({ photo1Ref, photo2Ref }, re
         <h1 className="hero-name">ALEXANDER</h1>
         <h2 className="hero-surname">Rodriguez</h2>
         <div className="hero-fifty">50</div>
-        <p className="hero-tagline">Celebrando medio siglo de vida</p>
       </div>
 
       <div className="hero-scroll-indicator">
