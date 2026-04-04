@@ -18,7 +18,7 @@ gsap.registerPlugin(ScrollTrigger);
 const FRAME_COUNT = 222;
 const FRAME_SPEED = 1.4;
 const IMAGE_SCALE = 0.88;
-const RSVP_TYPEFORM_URL = "https://form.typeform.com/to/EPDGaEO3";
+const RSVP_TYPEFORM_URL = "https://tally.so/r/XxYzEP";
 const MAPS_URL = "https://maps.app.goo.gl/Fgpjpi3U7AS6vccV7?g_st=aw";
 
 export default function App() {
